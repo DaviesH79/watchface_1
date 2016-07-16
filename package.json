@@ -1,0 +1,41 @@
+{
+  "name": "watchface",
+  "author": "francesfancy",
+  "version": "1.0.0",
+  "keywords": ["pebble-app"],
+  "private": true,
+  "dependencies": {},
+  "pebble": {
+    "displayName": "watchface",
+    "uuid": "b71618cf-fec3-48f8-b1a0-24c6efd91de4",
+    "sdkVersion": "3",
+    "enableMultiJS": true,
+    "targetPlatforms": [
+      "aplite",
+      "basalt",
+      "chalk"
+    ],
+    "watchapp": {
+      "watchface": true 
+    },
+    "messageKeys": [
+      "dummy"
+    ],
+    "resources": {
+        "media": [
+          {
+            "type": "font",
+            "name": "FONT_CALIG_48",
+            "file": "calligraphy.ttf",
+            "compatibility": "2.7"
+	  },
+	  {
+            "type": "bitmap",
+            "name": "IMAGE_BACKGROUND",
+            "file": "flower.png"
+	  }
+		
+]
+    }
+  }
+}
