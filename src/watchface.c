@@ -3,8 +3,6 @@
 static Window *s_main_window;
 static TextLayer *s_time_layer;
 
-// TestLayer for time_layer to sit on top of 
-static TextLayer *s_blank_layer;
 
 static BitmapLayer *s_background_layer;
 static GBitmap *s_background_bitmap;
@@ -51,10 +49,6 @@ static void main_window_load(Window *window) {
 	s_time_layer = text_layer_create(
 	GRect(0, PBL_IF_ROUND_ELSE(58, 52), bounds.size.w, 50));
 
-	// Create layer and bounds for the s_blank_layer
-	s_blank_layer = text_layer_create(
-	GRect(0, PBL_IF_ROUND_ELSE(58, 52), bounds.size.w, 50));
-	
 	// Improve the layout to be more like a watchface
 	text_layer_set_background_color(s_time_layer, GColorClear);
 	text_layer_set_text_color(s_time_layer, GColorBlack);
@@ -62,7 +56,6 @@ static void main_window_load(Window *window) {
 	text_layer_set_font(s_time_layer, s_time_font);
 	//text_layer_set_font(s_time_layer, fonts_get_system_font(FONT_KEY_BITHAM_42_BOLD));
 	text_layer_set_text_alignment(s_time_layer, GTextAlignmentCenter);
-	text_layer_set_text_alignment(s_blank_layer, GTextAlignmentCenter);
 	// Add it as a child layer to the window's root layer
 	layer_add_child(window_layer, text_layer_get_layer(s_time_layer));
 }
